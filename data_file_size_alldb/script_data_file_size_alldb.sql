@@ -2,7 +2,6 @@
 Author: 	Andrew Goss
 Website: 	andrewrgoss.com
 Purpose:	This script will get data file size, used space and free space for every database.
-Base code:	http://sqldbpool.com/2014/02/19/script-to-get-data-file-size-used-space-and-free-space/
 Initial: 	12/22/2015
 
 *****************************************************************/
@@ -19,7 +18,7 @@ SELECT
 FROM
 		  master.dbo.sysdatabases 
 WHERE
-		   dbid > 4
+		   dbid > 4 -- exclude system default databases
 OPEN Curse
 
 FETCH next FROM Curse INTO @databasename
